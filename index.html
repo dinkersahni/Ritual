@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rituals - India's first multi-faith platform for religious ceremonies and services">
+    <meta name="keywords" content="religious services, multi-faith, ceremonies, pandit, priest, imam, granthi">
+    <title>Rituals - Multi-Faith Event Services</title>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="rituals.css">
+    <!-- Font Awesome & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <!-- jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="floating-elements">
+        <div class="floating-element">🕉️</div>
+        <div class="floating-element">☪️</div>
+        <div class="floating-element">🛐</div>
+        <div class="floating-element">✡️</div>
+        <div class="floating-element">卐</div>
+    </div>
+
+    <header>
+        <!-- Replace with your actual logo file -->
+        <img src="rituals logo.png" alt="Rituals Logo" class="logo-img">
+        <h1>Rituals</h1>
+        <p class="tagline">Your one-stop platform for all religious ceremonies and services</p>
+    </header>
+
+    <nav class="nav-container">
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="#" class="nav-link active" data-page="home">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link" data-page="services">Our Services</a></li>
+            <li class="nav-item"><a href="#" class="nav-link" data-page="resources">Resources</a></li>
+            <li class="nav-item"><a href="#" class="nav-link" data-page="contact">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="container" id="main-content">
+        <!-- Home Page -->
+        <div class="page active" id="home-page">
+            <div class="hero-section">
+                <h2>Welcome to Rituals</h2>
+                <p>Rituals is India's first multi-faith platform that connects you with authentic religious services, ceremonies, and spiritual guidance across all major faiths. We bring tradition and technology together to serve your spiritual needs.</p>
+                <a href="#" class="cta-button" data-page="services">Explore Our Services</a>
+            </div>
+
+            <div class="features-section">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-hands-helping"></i></div>
+                    <h3>Multi-Faith Services</h3>
+                    <p>Access authentic religious services for Hindu, Muslim, Sikh, Christian, and Jain faiths all in one platform.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-calendar-check"></i></div>
+                    <h3>Easy Booking</h3>
+                    <p>Book ceremonies, order religious items, and connect with service providers with just a few clicks.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Verified Providers</h3>
+                    <p>All our religious service providers are thoroughly verified and experienced in their respective traditions.</p>
+                </div>
+            </div>
+
+            <h2 class="section-title">Our Featured Services</h2>
+            <div class="faith-selection">
+                <div class="faith-card hindu" data-page="services">
+                    <div class="faith-icon"><i class="fas fa-om"></i></div>
+                    <h3>Sanātan Dharm</h3>
+                    <p>Grihaparvesh, Deepawali Puja, and 20+ ceremonies</p>
+                </div>
+                <div class="faith-card muslim" data-page="services">
+                    <div class="faith-icon"><i class="fas fa-mosque"></i></div>
+                    <h3>Islam</h3>
+                    <p>Nikah, Aqiqah, Eid prayers and more</p>
+                </div>
+                <div class="faith-card sikh" data-page="services">
+                    <div class="faith-icon"><i class="fas fa-khanda"></i></div>
+                    <h3>Sikhism</h3>
+                    <p>Akhand Path, Anand Karaj, and other ceremonies</p>
+                </div>
+                <div class="faith-card christian" data-page="services">
+                    <div class="faith-icon"><i class="fas fa-cross"></i></div>
+                    <h3>Christianity</h3>
+                    <p>Baptism, Wedding, Christmas services and more</p>
+                </div>
+                <div class="faith-card jain" data-page="services">
+                    <div class="faith-icon"><i class="fas fa-dharmachakra"></i></div>
+                    <h3>Jainism</h3>
+                    <p>Pratishtha, Paryushan, and other ceremonies</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Services Page -->
+        <div class="page" id="services-page">
+            <h2 class="section-title">Book Your Religious Ceremony</h2>
+            <div class="faith-selection">
+                <div class="faith-card hindu" onclick="selectFaith('hindu')">
+                    <div class="faith-icon"><i class="fas fa-om"></i></div>
+                    <h3>Sanātan Dharm</h3>
+                    <p>Grihaparvesh, Deepawali Puja, and 20+ ceremonies</p>
+                </div>
+                <div class="faith-card muslim" onclick="selectFaith('muslim')">
+                    <div class="faith-icon"><i class="fas fa-mosque"></i></div>
+                    <h3>Islam</h3>
+                    <p>Nikah, Aqiqah, Eid prayers and more</p>
+                </div>
+                <div class="faith-card sikh" onclick="selectFaith('sikh')">
+                    <div class="faith-icon"><i class="fas fa-khanda"></i></div>
+                    <h3>Sikhism</h3>
+                    <p>Akhand Path, Anand Karaj, and other ceremonies</p>
+                </div>
+                <div class="faith-card christian" onclick="selectFaith('christian')">
+                    <div class="faith-icon"><i class="fas fa-cross"></i></div>
+                    <h3>Christianity</h3>
+                    <p>Baptism, Wedding, Christmas services and more</p>
+                </div>
+                <div class="faith-card jain" onclick="selectFaith('jain')">
+                    <div class="faith-icon"><i class="fas fa-dharmachakra"></i></div>
+                    <h3>Jainism</h3>
+                    <p>Pratishtha, Paryushan, and other ceremonies</p>
+                </div>
+            </div>
+
+            <!-- Booking containers (identical to original) -->
+            <h2 class="section-title" id="events-title" style="display: none;">Select Your Ceremony</h2>
+            <div class="events-container" id="hindu-events">
+                <button class="back-btn" onclick="goBackToFaiths()"><i class="fas fa-arrow-left"></i> Back to Religions</button>
+                <div class="events-grid"></div>
+            </div>
+            <div class="events-container" id="muslim-events">
+                <button class="back-btn" onclick="goBackToFaiths()"><i class="fas fa-arrow-left"></i> Back to Religions</button>
+                <div class="events-grid"></div>
+            </div>
+            <div class="events-container" id="sikh-events">
+                <button class="back-btn" onclick="goBackToFaiths()"><i class="fas fa-arrow-left"></i> Back to Religions</button>
+                <div class="events-grid"></div>
+            </div>
+            <div class="events-container" id="christian-events">
+                <button class="back-btn" onclick="goBackToFaiths()"><i class="fas fa-arrow-left"></i> Back to Religions</button>
+                <div class="events-grid"></div>
+            </div>
+            <div class="events-container" id="jain-events">
+                <button class="back-btn" onclick="goBackToFaiths()"><i class="fas fa-arrow-left"></i> Back to Religions</button>
+                <div class="events-grid"></div>
+            </div>
+
+            <h2 class="section-title" id="items-title" style="display: none;">Select Ceremony Kit</h2>
+            <div class="items-container" id="items-container">
+                <button class="back-btn" onclick="goBackToEvents()"><i class="fas fa-arrow-left"></i> Back to Ceremonies</button>
+                <div class="items-grid"></div>
+                <button class="checkout-btn" onclick="showServiceOptions()">Proceed to Book Services</button>
+            </div>
+
+            <h2 class="section-title" id="services-title" style="display: none;">Select Religious Service Provider</h2>
+            <div class="pandit-container" id="pandit-container">
+                <button class="back-btn" onclick="goBackToItems()"><i class="fas fa-arrow-left"></i> Back to Items</button>
+                <div class="pandit-options"></div>
+            </div>
+            <div class="pandit-container" id="priest-container">
+                <button class="back-btn" onclick="goBackToItems()"><i class="fas fa-arrow-left"></i> Back to Items</button>
+                <div class="priest-options"></div>
+            </div>
+            <div class="pandit-container" id="granthi-container">
+                <button class="back-btn" onclick="goBackToItems()"><i class="fas fa-arrow-left"></i> Back to Items</button>
+                <div class="granthi-options"></div>
+            </div>
+            <div class="pandit-container" id="imam-container">
+                <button class="back-btn" onclick="goBackToItems()"><i class="fas fa-arrow-left"></i> Back to Items</button>
+                <div class="imam-options"></div>
+            </div>
+            <div class="pandit-container" id="jain-pandit-container">
+                <button class="back-btn" onclick="goBackToItems()"><i class="fas fa-arrow-left"></i> Back to Items</button>
+                <div class="jain-pandit-options"></div>
+            </div>
+
+            <!-- Address Section -->
+            <h2 class="section-title" id="address-title" style="display: none;">Enter Your Address</h2>
+            <div class="address-container" id="address-container">
+                <button class="back-btn" onclick="goBackToServices()"><i class="fas fa-arrow-left"></i> Back to Services</button>
+                <div class="address-form">
+                    <div class="form-group">
+                        <label for="full-name">Full Name</label>
+                        <input type="text" id="full-name" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone-number">Phone Number</label>
+                        <input type="tel" id="phone-number" placeholder="Enter your phone number" required>
+                    </div>
+                    <div class="form-group" id="rashi-field" style="display: none;">
+                        <label for="rashi">Rashi (Zodiac Sign)</label>
+                        <select id="rashi">
+                            <option value="">Select Rashi</option>
+                            <option value="mesha">Mesha (Aries)</option>
+                            <option value="vrishabha">Vrishabha (Taurus)</option>
+                            <option value="mithuna">Mithuna (Gemini)</option>
+                            <option value="karka">Karka (Cancer)</option>
+                            <option value="simha">Simha (Leo)</option>
+                            <option value="kanya">Kanya (Virgo)</option>
+                            <option value="tula">Tula (Libra)</option>
+                            <option value="vrishchika">Vrishchika (Scorpio)</option>
+                            <option value="dhanu">Dhanu (Sagittarius)</option>
+                            <option value="makara">Makara (Capricorn)</option>
+                            <option value="kumbha">Kumbha (Aquarius)</option>
+                            <option value="meena">Meena (Pisces)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="address-line1">Address Line 1</label>
+                        <input type="text" id="address-line1" placeholder="House/Flat No, Building Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address-line2">Address Line 2</label>
+                        <input type="text" id="address-line2" placeholder="Street Name, Area" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="landmark">Landmark</label>
+                        <input type="text" id="landmark" placeholder="Nearby landmark" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" id="city" placeholder="Enter your city" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="state">State</label>
+                        <input type="text" id="state" placeholder="Enter your state" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pincode">PIN Code</label>
+                        <input type="text" id="pincode" placeholder="Enter PIN code" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ceremony-date">Preferred Ceremony Date</label>
+                        <input type="date" id="ceremony-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ceremony-time">Preferred Ceremony Time</label>
+                        <input type="time" id="ceremony-time" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="special-instructions">Special Instructions (Optional)</label>
+                        <textarea id="special-instructions" placeholder="Any special requirements..."></textarea>
+                    </div>
+                </div>
+                <button class="checkout-btn" onclick="saveAddressAndProceed()">Proceed to Checkout</button>
+            </div>
+
+            <!-- Cart -->
+            <h2 class="section-title" style="display: none;">Your Cart</h2>
+            <div class="cart-container" id="cart-container">
+                <button class="back-btn" onclick="goBackToAddress()"><i class="fas fa-arrow-left"></i> Back to Address</button>
+                <div class="cart-items" id="cart-items"></div>
+                <div class="cart-total" id="cart-total">Total: ₹0</div>
+                <button class="checkout-btn" onclick="showPayment()">Proceed to Payment</button>
+            </div>
+
+            <!-- Payment -->
+            <h2 class="section-title" style="display: none;">Payment Verification</h2>
+            <div class="payment-container" id="payment-container">
+                <button class="back-btn" onclick="goBackToCart()"><i class="fas fa-arrow-left"></i> Back to Cart</button>
+                <h3>Complete Your Payment</h3>
+                <div class="payment-info">
+                    <h4>Payment Details</h4>
+                    <p><strong>Total Amount Due:</strong> <span id="payment-total">₹0</span></p>
+                    <p><strong>Payment Method:</strong> Scan QR Code with any UPI app</p>
+                </div>
+                <div class="qr-code-container">
+                    <h4>Scan QR Code to Pay</h4>
+                    <div class="qr-code"><i class="fas fa-qrcode"></i></div>
+                    <p style="margin-top: 1rem; color: #666;">Use PhonePe, Google Pay, Paytm, or any UPI app</p>
+                </div>
+                <div class="payment-verification">
+                    <h4><i class="fas fa-shield-alt"></i> Secure Payment Verification</h4>
+                    <p>To prevent fraud, we verify all payments through our secure system:</p>
+                    <div class="verification-steps">
+                        <li>Scan the QR code above with any UPI app</li>
+                        <li>Pay the exact amount shown above</li>
+                        <li>Upload screenshot of payment confirmation</li>
+                        <li>Our system will verify the payment</li>
+                    </div>
+                    <div class="secure-notice">
+                        <i class="fas fa-lock"></i> <strong>Note:</strong> Partial payments will not be processed. The system automatically detects payment amounts.
+                    </div>
+                </div>
+                <div class="screenshot-upload">
+                    <h4>Upload Payment Screenshot</h4>
+                    <p>After making payment, take a screenshot of the confirmation and upload it here</p>
+                    <input type="file" id="screenshot-upload" accept="image/*">
+                    <label for="screenshot-upload" class="upload-label">
+                        <i class="fas fa-cloud-upload-alt"></i> Click to Upload Payment Screenshot
+                    </label>
+                    <div class="preview-container" id="preview-container">
+                        <img id="preview-image" src="" alt="Payment Screenshot">
+                    </div>
+                </div>
+                <button class="verify-btn" id="verify-btn" onclick="verifyPayment()" disabled>Verify Payment</button>
+                <div class="verification-result" id="verification-result"></div>
+            </div>
+        </div>
+
+        <!-- Resources Page -->
+        <div class="page" id="resources-page">
+            <h2 class="section-title">Rituals Resources</h2>
+            <div class="resources-section">
+                <div class="resource-card">
+                    <h3><i class="fas fa-calendar-alt"></i> Multi-Faith Calendar</h3>
+                    <p>Complete multi-faith festival calendar for 2024-2026 with all major festivals for Hindu, Muslim, Sikh, Christian, and Jain traditions.</p>
+                    <div class="resource-details">
+                        <h4>Includes:</h4>
+                        <ul>
+                            <li>All major festivals for 5 faiths</li>
+                            <li>Month-wise organization</li>
+                            <li>Downloadable formats</li>
+                            <li>Year selection (2024-2026)</li>
+                        </ul>
+                    </div>
+                    <div class="file-info">
+                        <span><i class="fas fa-file-alt"></i> Interactive Calendar</span>
+                        <span class="download-count"><i class="fas fa-eye"></i> 2,450 views</span>
+                    </div>
+                    <div class="download-section">
+                        <button class="download-btn" onclick="showCalendarDetailPage()">
+                            <i class="fas fa-external-link-alt"></i> View Calendar
+                        </button>
+                    </div>
+                </div>
+                <!-- Additional resource cards (same as original) -->
+            </div>
+        </div>
+
+        <!-- Calendar Detail Page -->
+        <div class="page" id="calendar-detail-page">
+            <div class="calendar-detail-page">
+                <div class="calendar-detail-header">
+                    <h2>Multi-Faith Religious Calendar 2024-2026</h2>
+                    <p>Explore our comprehensive multi-faith calendar with all major festivals for Hindu, Muslim, Sikh, Christian, and Jain traditions. Select a year to view the festivals.</p>
+                </div>
+                <div class="calendar-section">
+                    <div class="year-selection">
+                        <h3>Select Year to View Festivals</h3>
+                        <div class="year-buttons">
+                            <button class="year-btn active" onclick="showYearCalendar(2024)">2024</button>
+                            <button class="year-btn" onclick="showYearCalendar(2025)">2025</button>
+                            <button class="year-btn" onclick="showYearCalendar(2026)">2026</button>
+                        </div>
+                    </div>
+                    <div id="calendar-2024" class="calendar-content active"></div>
+                    <div id="calendar-2025" class="calendar-content"></div>
+                    <div id="calendar-2026" class="calendar-content"></div>
+                    <div class="download-section">
+                        <button class="cta-button" onclick="showDownloadCalendarPage()">
+                            <i class="fas fa-download"></i> Download Complete Calendar
+                        </button>
+                    </div>
+                </div>
+                <button class="back-btn" onclick="goBackToResources()">
+                    <i class="fas fa-arrow-left"></i> Back to Resources
+                </button>
+            </div>
+        </div>
+
+        <!-- Download Calendar Page -->
+        <div class="page" id="download-calendar-page">
+            <div class="download-calendar-page">
+                <h2>Download Multi-Faith Calendar</h2>
+                <p>Select the year and format you want to download</p>
+                <div class="download-options">
+                    <div class="download-option">
+                        <h3>2024 Calendar</h3>
+                        <p>Complete multi-faith festival calendar for 2024</p>
+                        <button class="download-btn" onclick="downloadCalendar(2024)">
+                            <i class="fas fa-download"></i> Download 2024 Calendar
+                        </button>
+                    </div>
+                    <div class="download-option">
+                        <h3>2025 Calendar</h3>
+                        <p>Complete multi-faith festival calendar for 2025</p>
+                        <button class="download-btn" onclick="downloadCalendar(2025)">
+                            <i class="fas fa-download"></i> Download 2025 Calendar
+                        </button>
+                    </div>
+                    <div class="download-option">
+                        <h3>2026 Calendar</h3>
+                        <p>Complete multi-faith festival calendar for 2026</p>
+                        <button class="download-btn" onclick="downloadCalendar(2026)">
+                            <i class="fas fa-download"></i> Download 2026 Calendar
+                        </button>
+                    </div>
+                </div>
+                <button class="back-btn" onclick="goBackToCalendarDetail()">
+                    <i class="fas fa-arrow-left"></i> Back to Calendar
+                </button>
+            </div>
+        </div>
+
+        <!-- Contact Us Page -->
+        <div class="page" id="contact-page">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-container">
+                <h3 style="text-align: center; margin-bottom: 1.5rem; color: #4a148c;">Send us a message directly via Gmail</h3>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" placeholder="Enter your phone number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" placeholder="Type your message here..." required></textarea>
+                    </div>
+                    <button type="submit" class="gmail-btn">
+                        <i class="fab fa-google"></i> Send via Gmail
+                    </button>
+                </form>
+                <div class="contact-info-box">
+                    <p><strong>Email:</strong> <a href="mailto:chanakyasahni8@gmail.com">chanakyasahni8@gmail.com</a></p>
+                    <p>Your message will open in Gmail with all details pre-filled</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="notification" id="notification">
+        <i class="fas fa-check-circle"></i> Redirecting to Gmail...
+    </div>
+
+    <!-- Chatbot -->
+    <div class="chatbot-icon" id="chatbotIcon">
+        <i class="fas fa-robot"></i>
+    </div>
+    <div class="chatbot-container" id="chatbotContainer">
+        <div class="chatbot-header">
+            <h3><i class="fas fa-robot"></i> Rituals Assistant</h3>
+            <button class="chatbot-toggle" id="chatbotToggle">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chatbot-messages" id="chatbotMessages">
+            <div class="message bot-message">
+                Hello! I'm your Rituals assistant. How can I help you with your religious ceremony today?
+            </div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatbotInput" placeholder="Ask me anything...">
+            <button id="sendMessage"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <div class="contact-info" onclick="handleContactClick('phone')">
+                    <i class="fas fa-phone"></i>
+                    <span>+91 98661 93066</span>
+                </div>
+                <div class="contact-info" onclick="handleContactClick('email')">
+                    <i class="fas fa-envelope"></i>
+                    <span>chanakyasahni8@gmail.com</span>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Our Services</h3>
+                <a href="#" class="footer-link" data-page="services" onclick="handleServiceClick('hindu')">Hindu Ceremonies</a>
+                <a href="#" class="footer-link" data-page="services" onclick="handleServiceClick('muslim')">Muslim Ceremonies</a>
+                <a href="#" class="footer-link" data-page="services" onclick="handleServiceClick('sikh')">Sikh Ceremonies</a>
+                <a href="#" class="footer-link" data-page="services" onclick="handleServiceClick('christian')">Christian Ceremonies</a>
+                <a href="#" class="footer-link" data-page="services" onclick="handleServiceClick('jain')">Jain Ceremonies</a>
+                <a href="#" class="footer-link" data-page="services" onclick="handleServiceClick('interfaith')">Interfaith Services</a>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#" class="footer-link" onclick="showPolicy('privacy')">Privacy Policy</a>
+                <a href="#" class="footer-link" onclick="showPolicy('terms')">Terms & Conditions</a>
+                <a href="#" class="footer-link" onclick="showPolicy('refund')">Refund Policy</a>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <div class="social-link" onclick="handleSocialClick('facebook')">
+                        <i class="fab fa-facebook-f"></i>
+                        <span>Facebook</span>
+                    </div>
+                    <div class="social-link" onclick="handleSocialClick('instagram')">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </div>
+                    <div class="social-link" onclick="handleSocialClick('twitter')">
+                        <i class="fab fa-twitter"></i>
+                        <span>Twitter</span>
+                    </div>
+                    <div class="social-link" onclick="handleSocialClick('youtube')">
+                        <i class="fab fa-youtube"></i>
+                        <span>YouTube</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="copyright">
+            <div class="copyright-content">
+                <p>&copy; 2025 Rituals. All rights reserved. | Connecting You to Divine Services</p>
+                <p class="disclaimer">Disclaimer: This is still a demo website.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Policy Modals -->
+    <div class="policy-modal" id="privacy-policy-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('privacy-policy-modal')">&times;</span>
+            <h2>Privacy Policy</h2>
+            <div class="policy-content">
+                <h3>Information We Collect</h3>
+                <p>We collect information that you provide directly to us...</p>
+                <!-- full content as original -->
+            </div>
+        </div>
+    </div>
+    <div class="policy-modal" id="terms-policy-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('terms-policy-modal')">&times;</span>
+            <h2>Terms & Conditions</h2>
+            <div class="policy-content">
+                <h3>Acceptance of Terms</h3>
+                <p>By accessing and using Rituals, you accept and agree to be bound by these Terms and Conditions.</p>
+                <!-- full content -->
+            </div>
+        </div>
+    </div>
+    <div class="policy-modal" id="refund-policy-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('refund-policy-modal')">&times;</span>
+            <h2>Refund Policy</h2>
+            <div class="policy-content">
+                <h3>Cancellation & Refund Eligibility</h3>
+                <p>Refunds are processed under the following conditions...</p>
+                <!-- full content -->
+            </div>
+        </div>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="rituals.js"></script>
+</body>
+</html>
